@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search results</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1 value="title1"></h1>
+<p id="cars1"></p>
+
+
+
+<script th:inline="javascript">
+    //<![CDATA[
+    var modelAttr1 = //[[${pageTitle}]];
+    alert(modelAttr1);
+    var modelAttr2 = //[[${keyword}]]";
+    alert(modelAttr2);
+
+    //]]>
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Signin</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/pages/index/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/pages/index/index.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- My JS -->
+    <script src="/pages/index/index.js"></script>
+  </head>
+
+  <body class="text-center">
+    <div class="container">
+      <form class="form-signin" id="login" action="" method="get" onchange="getUserDetails()" content="application/json">
+        <!-- <img src="user.png" alt="" width="300" height="135"> -->
+        <div class="container">
+          <h1 style="color: whitesmoke;" class="display-3">Welcome</h1>
+          <p style="color: whitesmoke;"  class="lead">Please sign in to access the application.</p>
+        </div>
+        <label class="sr-only">Email address</label>
+        <input name="email" type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+        <label class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+      <p class="mt-5 mb-3 text-muted">
+        <a href="/api/signup">
+          <button type="submit" href="/api/signup" class="btn btn-lg btn-link btn-block">Sign up</button>
+        </a>
+      </p>
+      <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+    </div>
+  </body>
+</html>

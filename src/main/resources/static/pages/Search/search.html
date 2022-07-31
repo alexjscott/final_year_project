@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Search</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link type="text/css" href="/pages/search/search.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="/pages/search/search.js"></script>
+</head>
+
+<body>
+<div id="space_after_jum" style="height: 5vh;"></div>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Search</h1>
+          <p class="lead">Click the drop-down menu to refine your search.</p>
+          <hr class="my-4">
+          <div onchange="changeSEARCH()" class="input-group mb-3">
+            <button id="selection" class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Vehicle</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" >Vehicle</a></li>
+              <li><a class="dropdown-item" >City</a></li>
+              <li><a class="dropdown-item" >Country</a></li>
+              <li><a class="dropdown-item" >Price</a></li>
+              <li><a class="dropdown-item" >Make</a></li>
+              <li><a class="dropdown-item" >Model</a></li>
+              <li><a class="dropdown-item" >Year</a></li>
+              <li><a class="dropdown-item" >Doors</a></li>
+              <li><a class="dropdown-item" >Colour</a></li>
+            </ul>
+            <input id="searchString" type="text" class="form-control" aria-label="Text input with dropdown button">
+          </div>
+          <p class="lead text-center">
+            <a class="btn btn-primary btn-lg" onclick="searchDB()" role="button">Search</a>
+            <a class="btn btn-outline-primary btn-lg" onclick="recommend()" role="button">Recommend</a>
+            <a class="btn btn-outline-primary btn-lg" onclick="hosted()" role="button">Hosted</a>
+            <a class="btn btn-secondary btn-lg" href="/api/user/profile" role="button">Back</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="background"></div>
+    <div id="space" style="height: 1vh;"></div>
+    <div class="card">
+      <h5 class="card-header" id="resultsNum">Results(0)</h5>
+      <div class="card-body">
+        <button class="btn btn-link text-danger" onclick="clearTable()">Clear</button>
+        <div class="table-responsive">
+          <!--Table-->
+          <table id="searchTable" class="table table-primary table-striped table-hover text-primary">
+
+            <!--Table head-->
+            <thead>
+            <tr>
+              <th>Reg</th>
+              <th>Type</th>
+              <th>Price Per Day</th>
+              <th>Make</th>
+              <th>Model</th>
+              <th>Year</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Doors</th>
+              <th>Colour</th>
+            </tr>
+            </thead>
+            <!--Table head-->
+
+            <!--Table body-->
+            <tbody id="searchLIST">
+
+            </tbody>
+            <!--Table body-->
+          </table>
+          <!--Table-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body> <!-- End -->
+</html> <!-- End -->

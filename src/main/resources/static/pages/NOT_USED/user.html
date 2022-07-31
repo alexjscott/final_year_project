@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./scripts/user.js"></script>
+    <link rel="stylesheet" href="./css/user.css">
+    <title>Users page</title>
+    <!--This page allows a host to create, delete and edit a user/s -->
+</head>
+<body>
+<!-- List all the users-->
+<h1 style="text-align: center;">All users</h1>
+<table id="listof" style="width: 100%; text-align: center;">
+    <tr>
+<!--        // TODO fix bug with id not starting with 1-->
+        <th>User Id</th>
+        <th>Title</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Postcode</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+</table>
+
+<div class="Row" style="display: table; width: 100%; border-spacing: 10px;">
+
+
+    <div class="Column" style="display: table-cell;">
+        <!--    // TODO add image to db or another way-->
+        <h1>Create a user</h1>
+        <form action="users/save" method="post">
+            <p>Title: <input type="text" name="title" required></p>
+            <p>Name: <input type="text" name="name" required></p>
+            <p>Phone: <input type="text" name="phone" required></p>
+            <p>Address: <input type="text" name="address" required></p>
+            <p>Postcode: <input type="text" name="postcode" required></p>
+            <p>Email: <input type="text" name="email" required></p>
+            <p>Username: <input type="text" name="username" required></p>
+            <p>Password: <input type="text" name="password" required></p>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="Column" style="display: table-cell;">
+        <h1>Edit a user</h1>
+        <form onsubmit="return false;">
+<!--            // TODO fix bug with id not starting with 1-->
+            <p>Enter id: <input id="edituserid" type="number" required></p>
+            <p>Title: <input id="editTitle" type="text" required></p>
+            <p>Name: <input id="editName" type="text" required></p>
+            <p>Phone: <input id="editPhone" type="number" required></p>
+            <p>Address: <input id="editAddress" type="text" required></p>
+            <p>Postcode: <input id="editPostcode" type="text" required></p>
+            <p>Email: <input id="editEmail" type="text" required></p>
+            <p>Username: <input id="editUsername" type="text" required></p>
+            <p>Password: <input id="editPassword" type="text" required></p>
+
+            <input onClick="editAction()" type="submit" value="Submit">
+        </form>
+    </div>
+
+
+    <div class="Column" style="display: table-cell;">
+        <!--TODO delete by reg not id            -->
+        <h1>Delete a user</h1>
+        <form onsubmit="return false;">
+            <p>Enter id: <input id="deleteuserid" type="number" required></p>
+            <input onClick="deleteAction()" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./scripts/booking.js"></script>
+    <link rel="stylesheet" href="./css/booking.css">
+    <title>BookingTest page</title>
+</head>
+<body>
+
+    <!-- List all the BookingTest-->
+    <h1 style="text-align: center;">All users bookings</h1>
+    <table id="listofbookings" style="width: 100%; text-align: center;">
+        <tr>
+            <th>Booking Id</th>
+            <th>Start Date</th>
+            <th>Finish Date</th>
+            <th>Booking in time</th>
+            <th>Booking out time</th>
+            <th>Room Type</th>
+        </tr>
+    </table>
+    <div class="Row" style="display: table; width: 100%; border-spacing: 10px;">
+
+
+        <div class="Column" style="display: table-cell;">
+            <!--    // TODO add image to db or another way-->
+            <h1>Create a booking</h1>
+            <form action="bookings/save" method="post">
+                <p>Start Date: <input type="text" name="startdate" required></p>
+                <p>Finish Date: <input type="text" name="finishdate" required></p>
+                <p>Booking in time: <input type="text" name="bookingintime" required></p>
+                <p>Booking out time: <input type="text" name="bookingouttime" required></p>
+                <p>Room Type: <input type="text" name="roomtype" required></p>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+
+        <div class="Column" style="display: table-cell;">
+            <h1>Edit a booking</h1>
+            <form onsubmit="return false;">
+                <p>Enter id: <input id="editbookingid" type="number" required></p>
+                <p>Start Date: <input id="editstartdate" type="text" name="startdate" required></p>
+                <p>Finish Date: <input id="editfinishdate" type="text" name="finishdate" required></p>
+                <p>Booking in time: <input id="editbookingin" type="text" name="bookingintime" required></p>
+                <p>Booking out time: <input id="editbookingout" type="text" name="bookingouttime" required></p>
+                <p>Room Type: <input id="editroomtype" type="text" name="roomtype" required></p>
+
+                <input onClick="editBookingAction()" type="submit" value="Submit">
+            </form>
+        </div>
+
+
+        <div class="Column" style="display: table-cell;">
+            <!--TODO delete by reg not id            -->
+            <h1>Delete a booking</h1>
+            <form onsubmit="return false;">
+                <p>Enter id: <input id="deletebookingid" type="number" required></p>
+                <input onClick="deleteBookingAction()" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

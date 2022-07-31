@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./scripts/listing.js"></script>
+    <link rel="stylesheet" href="./css/listing.css">
+    <title>Listings page</title>
+    <!--This page allows a host to create, delete and edit a listing/s -->
+</head>
+<body>
+
+    <!-- List all the listings-->
+    <h1 style="text-align: center;">All users listings</h1>
+    <table id="listof" style="width: 100%; text-align: center;">
+        <tr>
+            <th>Listing Id</th>
+            <th>Colour</th>
+            <th>Registration</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Price Per Day</th>
+            <th>Date</th>
+            <th>Information</th>
+            <th>Date Available</th>
+            <th>Date Unavailable</th>
+            <th>Location</th>
+        </tr>
+    </table>
+
+<div class="Row" style="display: table; width: 100%; border-spacing: 10px;">
+
+
+    <div class="Column" style="display: table-cell;">
+<!--    // TODO add image to db or another way-->
+    <h1>Create a listing</h1>
+    <form action="listings/save" method="post">
+        <p>Colour: <input type="text" name="colour" required></p>
+        <p>Registration: <input type="text" name="registration" required></p>
+        <p>Make: <input type="text" name="make" required></p>
+        <p>Model: <input type="text" name="model" required></p>
+        <p>Price: <input type="number" name="price" required></p>
+        <p>Date: <input type="text" name="date" required></p>
+        <p>Information: <input type="text" name="information" required></p>
+        <p>Date Available: <input type="text" name="date_available" required></p>
+        <p>Date Unavailable: <input type="text" name="date_unavailable" required></p>
+        <p>Location: <input type="text" name="location" required></p><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+
+    <div class="Column" style="display: table-cell;">
+    <h1>Edit a listing</h1>
+    <form onsubmit="return false;">
+        <p>Enter id: <input id="editlistingid" type="number" required></p>
+        <p>Colour: <input id="editColour" type="text" required></p>
+        <p>Registration: <input id="editRegistration" type="text" required></p>
+        <p>Make: <input id="editMake" type="text" required></p>
+        <p>Model: <input id="editModel" type="text" required></p>
+        <p>Price: <input id="editPrice" type="number" required></p>
+        <p>Date: <input id="editDate" type="text" required></p>
+        <p>Information: <input id="editInfo" type="text" required></p>
+        <p>Date Available: <input id="editdateav" type="text" required></p>
+        <p>Date Unavailable: <input id="editdateaun" type="text" required></p>
+        <p>Location: <input id="editlocation" type="text" required></p><br>
+
+        <input onClick="editBookingAction()" type="submit" value="Submit">
+    </form>
+    </div>
+
+
+    <div class="Column" style="display: table-cell;">
+    <!--TODO delete by reg not id            -->
+    <h1>Delete a listing</h1>
+    <form onsubmit="return false;">
+        <p>Enter id: <input id="deletelistingid" type="number" required></p>
+        <input onClick="deleteAction()" type="submit" value="Submit">
+    </form>
+    </div>
+</div>
+
+</body>
+</html>
+
