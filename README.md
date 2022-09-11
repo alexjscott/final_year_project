@@ -6,14 +6,16 @@ This is a full-stack web application, using Spring MVC as the framework to devel
    2. MySQL (Version: 8.0.28)
 
 ### Installation
-Download the [Software System](/) folder, where all source code files live.
+Clone repo into your local directory..
+```bash
+git clone https://github.com/alexjscott/final_year_project.git
+```
 
 ### How to execute
-To run the software, open Terminal..
-
-Goto the [Root](/) Folder then run: 
+cd to into directory and excute...
 
 ```bash
 ./gradlew bootRun
 ```
 
+into your command line.
